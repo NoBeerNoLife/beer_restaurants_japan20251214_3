@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>日本のビールレストラン TOP10</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="月次のポジティブな声＆売上で選ぶ、日本のビールレストランランキング" />
+</head>
+<body>
+  <header class="header">
+    <div class="brand">
+      <a href="./index.html" class="brand__link">🍺 Beer Restaurants Japan</a>
+    </div>
+    <nav class="nav">
+      <a href="./list.html">ランキング一覧</a>
+      <a href="#agent">予約エージェント</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero" aria-label="ヒーロー">
+      <!-- ここに assets/hero.png を置けば表示されます（商用利用OK画像を推奨） -->
+      <div class="hero__image" role="img" aria-label="若い日本の男女が笑顔でビールで乾杯している明るいイメージ"
+           style="background-image:url('./assets/hero.png');"></div>
+      <div class="hero__text">
+        <h1>今月のビールレストラン TOP10</h1>
+        <p>「ポジティブな声」×「売上」で上位10店舗を掲載。気分の上がる乾杯を探そう。</p>
+        <div class="hero__actions">
+          <a class="btn" href="./list.html">11位以下も見る</a>
+          <button class="btn btn--ghost" id="openAgentBtn">予約エージェントを開く</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section__head">
+        <h2>TOP10</h2>
+        <p class="muted">並び順：ポジティブな声 → 売上 → 店名</p>
+      </div>
+      <div id="top10" class="grid" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <!-- 予約エージェント（静的サイト版：予約確定はせず、候補提案＆リンク誘導） -->
+  <aside id="agent" class="agent" aria-label="予約エージェント" hidden>
+    <div class="agent__header">
+      <strong>予約エージェント</strong>
+      <button class="iconBtn" id="closeAgentBtn" aria-label="閉じる">✕</button>
+    </div>
+    <div class="agent__body" id="agentBody" role="log" aria-live="polite"></div>
+    <form class="agent__form" id="agentForm">
+      <input id="agentInput" type="text" autocomplete="off" placeholder="例：東京 2名 今週土曜 19:00 予算4000円" />
+      <button class="btn" type="submit">送信</button>
+    </form>
+    <div class="agent__hint muted">
+      ※このサイトは静的サイトのため「予約の確定」は行いません。候補提案・予約リンク誘導・店への伝言文を作成します。
+    </div>
+  </aside>
+
+  <button class="fab" id="fabBtn" aria-label="予約エージェントを開く">💬</button>
+
+  <script src="app.js"></script>
+</body>
+</html>
